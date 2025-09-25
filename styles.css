@@ -317,25 +317,47 @@ main{ padding-top: var(--header-h); }
   grid-template-columns: repeat(5, 1fr);
 }
 @media (max-width: 980px){ .steps{ grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px){ .steps{ grid-template-columns: 1fr; } }
-
+/* En mobile: poné el número ARRIBA para evitar cualquier solapamiento */
+@media (max-width:560px){
+  .steps li{
+    padding:1rem; /* ya no hace falta reservar a la derecha */
+  }
+  .steps li::before{
+    position:static;       /* sale del flujo absoluto */
+    display:block;
+    width:auto; height:auto;
+    border:none;           /* opcional: sacá el borde en mobile */
+    background:transparent;
+    font-size:1.1rem;
+    text-align:right;      /* queda alineado a la derecha en la primera línea */
+    margin:0 0 .25rem 0;   /* separadito del texto */
+  }
+}
 .steps li{
   background:var(--card);
   border:1px solid rgba(15,15,16,.08);
   border-radius:var(--radius);
-  padding:1rem;
+  padding:1rem calc(var(--num-size) + var(--num-gap) + 1rem) 1rem 1rem; /* reserva espacio a la derecha */
   box-shadow:var(--shadow);
   list-style:none;
   position:relative;
+   --num-size: 2.2rem;           /* ancho/alto “medalla” del número */
+  --num-gap: .6rem;              /* separación del borde */
 }
 .steps li::before{
   counter-increment: step;
   content: counter(step);
   position:absolute; top:.7rem; right:.8rem;
+  width: var(--num-size); height: var(--num-size);
+  display:grid; place-items:center;
   font-family:"Bebas Neue";
-  font-size:1.4rem; line-height:1;
+  font-size:1.2rem; line-height:1;
   color:var(--accent);
+  border:1px solid rgba(15,15,16,.12);
+  border-radius:999px;
+  background: var(--bg-2);
 }
+
 
 /* ===============================
    Payments
