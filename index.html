@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,14 +18,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-
+ <script>
+  (function(){
+    try {
+      var saved = localStorage.getItem('a14_theme');
+      // default CLARO si no hay nada guardado
+      document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+    } catch(e){}
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- ===== Header / Nav ===== -->
   <header class="site-header" data-elevate>
     <div class="container header-inner">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+  <span class="theme-ico" aria-hidden="true">🌙</span>
+</button>
+
       <a href="#inicio" class="brand" aria-label="A14 Studio - Ir al inicio">
         <img src="Multimedia/a14definitivo.png" alt="A14 Studio" class="brand-logo" width="220" height="60">
       </a>

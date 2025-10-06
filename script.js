@@ -170,3 +170,49 @@ const WHATSAPP_NUMBER = '5493510000000'; // ejemplo: 5493511234567
     }
   });
 })();
+/* ===============================
+   Toggle de tema (default: claro)
+   - Persiste en localStorage
+   - Actualiza <meta name="theme-color">
+   - Cambia icono y aria-pressed
+=================================*/
+(function themeToggleSetup(){
+  const ROOT = document.documentElement;
+  const BTN = document.getElementById('theme-toggle');
+  if (!BTN) return;
+
+  const THEME_KEY = 'a14_theme';
+  const META = document.querySelector('meta[name="theme-color"]');
+
+  // Colores para status bar/navegador
+  const LIGHT_META = '#ff5a00';            // ya lo tenés
+  const DARK_META  = '#0f1215';
+
+ function applyTheme(mode){
+  const isDark = mode === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light'); // <- nunca remove
+  const btn = document.getElementById('theme-toggle');
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (btn){
+    btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    btn.querySelector('.theme-ico').textContent = isDark ? '☀️' : '🌙';
+  }
+  if (meta) meta.setAttribute('content', isDark ? '#0f1215' : '#ff5a00');
+  try { typeof setHeaderVar === 'function' && setHeaderVar(); } catch {}
+}
+
+
+
+  // Estado inicial: leé preferencia guardada (o claro si no hay)
+  const saved = localStorage.getItem(THEME_KEY);
+  const initial = (saved === 'dark' || saved === 'light') ? saved : 'light';
+  applyTheme(initial);
+
+  // Toggle al click
+  BTN.addEventListener('click', () => {
+    const isDark = ROOT.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
+  });
+})();
