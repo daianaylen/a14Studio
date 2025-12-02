@@ -325,31 +325,37 @@ main{ padding-top: var(--header-h); }
 /* Si preferís 1×1 directamente en tablet, cambiá este breakpoint a 900px o 980px */
 @media (max-width:560px){ .steps{ grid-template-columns: 1fr; overflow-x:clip; } }
 
-.steps li{
-  position:relative;
-  list-style:none;
-  background:var(--card);
-  border:1px solid rgba(15,15,16,.08);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1rem 3.2rem 1rem 1rem;    /* espacio para el número a la derecha */
-  min-width:0;                       /* que el contenido pueda achicarse */
-  overflow-wrap:anywhere;            /* evita palabras largas que empujen el ancho */
+.steps li {
+  position: relative;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid rgba(15,15,16,.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1rem 1rem 3.2rem; /* más espacio a la izquierda */
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
-.steps li::before{
+.steps li::before {
   counter-increment: step;
   content: counter(step);
-  position:absolute; top:.8rem; right:.8rem;
-  width:2rem; height:2rem;
-  display:grid; place-items:center;
-  border:1px solid rgba(15,15,16,.12);
-  border-radius:999px;
-  background:var(--bg-2);
-  font-family:"Bebas Neue";
-  font-size:1.1rem; line-height:1;
-  color:var(--accent);
+  position: absolute;
+  left: 1rem;  /* movido a la izquierda */
+  top: .9rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(15,15,16,.12);
+  border-radius: 999px;
+  background: var(--bg-2);
+  font-family: "Bebas Neue";
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent);
 }
+
 
 /* ---- Mobile: apilado y número a la izquierda ---- */
 @media (max-width:560px){
@@ -691,10 +697,23 @@ ul li::before{ top: .42em; }
   background: color-mix(in srgb, var(--bg) 88%, black 12%);
   border-color: rgba(255,255,255,.06);
 }
-:root[data-theme="dark"] .filter{
-  background: var(--card); border-color: rgba(255,255,255,.12);
+:root[data-theme="dark"] .filter {
+  background: color-mix(in srgb, var(--card) 80%, white 5%);
+  border-color: rgba(255,255,255,.18);
+  color: var(--muted);              /* texto más claro */
 }
-:root[data-theme="dark"] .filter.is-active{ color:#fff; }
+
+:root[data-theme="dark"] .filter:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--card) 70%, white 10%);
+}
+
+:root[data-theme="dark"] .filter.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 :root[data-theme="dark"] .social a{
   background: var(--bg-2); border-color: rgba(255,255,255,.06);
 }
