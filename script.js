@@ -151,25 +151,6 @@ window.addEventListener('load', () => {
   }
 });
 
-// ===== Utilidad: reemplazar el teléfono de WhatsApp en un solo lugar =====
-// Editá este número; el JS actualizará los enlaces que tengan el placeholder.
-const WHATSAPP_NUMBER = '5493510000000'; // ejemplo: 5493511234567
-
-(function updateWhatsAppLinks() {
-  if (!WHATSAPP_NUMBER) return;
-  const placeholderSelector = 'a[href^="https://wa.me/XXXXXXXXXXX"]';
-  const links = document.querySelectorAll(placeholderSelector);
-  links.forEach((a) => {
-    try {
-      const u = new URL(`https://wa.me/${WHATSAPP_NUMBER}`);
-      const orig = new URL(a.href);
-      if (orig.search) u.search = orig.search; // conserva el ?text prellenado
-      a.href = u.toString();
-    } catch {
-      // si falla URL(), lo dejamos como está
-    }
-  });
-})();
 /* ===============================
    Toggle de tema (default: claro)
    - Persiste en localStorage
@@ -214,5 +195,38 @@ const WHATSAPP_NUMBER = '5493510000000'; // ejemplo: 5493511234567
     const next = isDark ? 'light' : 'dark';
     localStorage.setItem(THEME_KEY, next);
     applyTheme(next);
+  });
+})();
+/* ===============================
+   Formulario de contacto → mailto
+   - Usa JS para armar el mail con Nombre, Email y Mensaje
+=================================*/
+(function setupContactMailto() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const nombre  = (data.get('nombre')  || '').trim();
+    const email   = (data.get('email')   || '').trim();
+    const mensaje = (data.get('mensaje') || '').trim();
+
+    const subject = encodeURIComponent('Consulta desde la web A14 Studio');
+
+    const bodyLines = [];
+    if (nombre) bodyLines.push(`Nombre: ${nombre}`);
+    if (email)  bodyLines.push(`Email: ${email}`);
+    if (mensaje) {
+      bodyLines.push('');
+      bodyLines.push('Mensaje:');
+      bodyLines.push(mensaje);
+    }
+
+    const body = encodeURIComponent(bodyLines.join('\n'));
+
+    const href = `mailto:a14studio.cba@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = href;
   });
 })();

@@ -9,33 +9,42 @@
   <meta name="theme-color" content="#ff5a00">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="A14 Studio — Diseño & Desarrollo Web">
-  <meta property="og:description" content="Portfolio y servicios de diseño y desarrollo web de A14 Studio.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="img/og-a14.jpg">
+<meta property="og:title" content="A14 Studio — Diseño & Desarrollo Web">
+<meta property="og:description" content="Portfolio y servicios de diseño y desarrollo web de A14 Studio. Sitios claros, rápidos y listos para vender.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daianaylen.github.io">
+<meta property="og:image" content="https://daianaylen.github.io/Multimedia/og-a14.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://daianaylen.github.io">
+
 
   <link rel="icon" href="Multimedia/svg-puntito.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
- <script>
-  (function(){
-    try {
-      var saved = localStorage.getItem('a14_theme');
-      // default CLARO si no hay nada guardado
-      document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
-    } catch(e){}
-  })();
-</script>
-<link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function(){
+      try {
+        var saved = localStorage.getItem('a14_theme');
+        // default CLARO si no hay nada guardado
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch(e){}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- ===== Header / Nav ===== -->
   <header class="site-header" data-elevate>
     <div class="container header-inner">
       <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
-  <span class="theme-ico" aria-hidden="true">🌙</span>
-</button>
+        <span class="theme-ico" aria-hidden="true">🌙</span>
+      </button>
 
       <a href="#inicio" class="brand" aria-label="A14 Studio - Ir al inicio">
         <img src="Multimedia/a14definitivo.png" alt="A14 Studio" class="brand-logo" width="220" height="60">
@@ -46,6 +55,7 @@
       <nav id="nav" class="nav">
         <a href="#servicios">Servicios</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#studio">Sobre el estudio</a>
         <a href="#proceso">Proceso</a>
         <a href="#medios">Medios de pago</a>
         <a href="#contacto" class="btn-cta">Hablemos</a>
@@ -58,11 +68,11 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1>Webs únicas que van directo <span class="accent">de tu idea a la web</span></h1>
-          <p>Diseño y desarrollo sitios modernos, accesibles y listos para vender. Estilo fresco, código prolijo y foco en el detalle.</p>
+          <h1>Del concepto, al código.<br> <span class="accent">De tu idea, a la web.</span></h1>
+          <p>Diseño y desarrollo de sitios modernos, accesibles y listos para vender. Estilo fresco, código prolijo y foco en el detalle.</p>
           <div class="hero-cta">
             <a href="#portfolio" class="btn">Ver trabajos</a>
-            <a href="https://wa.me/+5493512075110" class="btn ghost" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+            <a href="https://wa.me/5493512075110" class="btn ghost" target="_blank" rel="noopener">Contactar por WhatsApp</a>
           </div>
         </div>
         <div class="hero-art" aria-hidden="true">
@@ -72,18 +82,18 @@
       </div>
     </section>
 
-    <!-- ===== Sobre mí ===== -->
-    <section class="about" id="sobre-mi">
+    <!-- ===== Sobre el estudio ===== -->
+    <section class="about" id="studio">
       <div class="container grid-2">
         <div>
-          <h2>Hola, soy Aylén</h2>
-          <p>Soy diseñadora y desarrolladora web. Me gustan las interfaces limpias, la tipografía con carácter y las micro-interacciones que hacen que una web se sienta viva.</p>
+          <h2>Sobre A14 Studio</h2>
+          <p>A14 Studio es un estudio de diseño y desarrollo web que se enfoca en crear sitios claros, ágiles y alineados con la identidad de cada marca. Combinamos diseño visual cuidado, estructura ordenada y buenas prácticas técnicas.</p>
           <ul class="bullets">
-            <li>Responsive + performance desde el día uno</li>
-            <li>SEO técnico base y buenas prácticas de accesibilidad</li>
-            <li>Soporte post-lanzamiento</li>
+            <li>Proyectos responsive y con buena performance desde el día uno.</li>
+            <li>SEO técnico base y criterios de accesibilidad.</li>
+            <li>Acompañamiento y soporte post-lanzamiento.</li>
           </ul>
-          <a class="link" href="#contacto">Contame tu proyecto</a>
+          <a class="link" href="#contacto">Hablemos de tu proyecto</a>
         </div>
         <div class="about-card">
           <h3>Stack & herramientas</h3>
@@ -91,105 +101,105 @@
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
             <span>GitHub Pages</span><span>SEO</span><span>Soporte</span>
           </div>
+        </div>
       </div>
     </section>
 
     <!-- ===== Servicios ===== -->
-<section class="services" id="servicios">
-  <div class="container">
-    <h2>Servicios</h2>
+    <section class="services" id="servicios">
+      <div class="container">
+        <h2>Servicios</h2>
 
-    <!-- Paquetes principales -->
-    <div class="cards">
-      <!-- Landing -->
-      <article class="card">
-        <h3>Landing page</h3>
-        <p>Enfocada en conversión: ideal para campañas, lanzamientos o captar leads.</p>
-        <ul class="tiny">
-          <li>Entrega estimada: 1–2 semanas</li>
-          <li>Incluye: responsive, SEO base, analytics</li>
-          <li>1 ronda de ajustes</li>
-        </ul>
-        <p class="small muted"><strong>Desde:</strong> $250.000<span data-price-landing>—</span></p>
-        <a href="#contacto" class="btn">Quiero mi landing</a>
-      </article>
+        <!-- Paquetes principales -->
+        <div class="cards">
+          <!-- Landing -->
+          <article class="card">
+            <h3>Landing page</h3>
+            <p>Enfocada en conversión: ideal para campañas, lanzamientos o captar leads.</p>
+            <ul class="tiny">
+              <li>Entrega estimada: 1–2 semanas</li>
+              <li>Incluye: responsive, SEO base, analytics</li>
+              <li>1 ronda de ajustes</li>
+            </ul>
+            <p class="small muted"><strong>Desde:</strong> $250.000<span data-price-landing>—</span></p>
+            <a href="#contacto" class="btn">Quiero mi landing</a>
+          </article>
 
-      <!-- Sitio pequeño -->
-      <article class="card">
-        <h3>Sitio web full</h3>
-        <p>Portfolio, blog o institucional (3–6 secciones) con diseño a medida.</p>
-        <ul class="tiny">
-          <li>Entrega estimada: 2–4 semanas</li>
-          <li>Incluye: performance, accesibilidad, guía de uso</li>
-          <li>2 rondas de ajustes</li>
-        </ul>
-        <p class="small muted"><strong>Desde:</strong> $450.000<span data-price-sitio>—</span></p>
-        <a href="#contacto" class="btn">Pedir presupuesto</a>
-      </article>
+          <!-- Sitio pequeño -->
+          <article class="card">
+            <h3>Sitio web full</h3>
+            <p>Portfolio, blog o institucional (3–6 secciones) con diseño a medida.</p>
+            <ul class="tiny">
+              <li>Entrega estimada: 2–4 semanas</li>
+              <li>Incluye: performance, accesibilidad, guía de uso</li>
+              <li>2 rondas de ajustes</li>
+            </ul>
+            <p class="small muted"><strong>Desde:</strong> $450.000<span data-price-sitio>—</span></p>
+            <a href="#contacto" class="btn">Pedir presupuesto</a>
+          </article>
 
-    <article class="card">
-  <h3>Rediseño &amp; mejoras</h3>
-  <p>Optimización visual y técnica de tu sitio actual: velocidad, UX, SEO y responsive.</p>
-  <ul class="tiny">
-    <li>Entrega: según alcance</li>
-    <li>Incluye: auditoría + plan de acción</li>
-    <li>Métricas comparativas antes/después</li>
-  </ul>
-  <p class="small muted"><strong>Desde:</strong> $200.000<span data-price-redisenio>—</span></p>
-  <a href="#contacto" class="btn">Mejorar mi web</a>
-  </article>
-</div>
+          <!-- Rediseño -->
+          <article class="card">
+            <h3>Rediseño &amp; mejoras</h3>
+            <p>Optimización visual y técnica de tu sitio actual: velocidad, UX, SEO y responsive.</p>
+            <ul class="tiny">
+              <li>Entrega: según alcance</li>
+              <li>Incluye: auditoría + plan de acción</li>
+              <li>Métricas comparativas antes/después</li>
+            </ul>
+            <p class="small muted"><strong>Desde:</strong> $200.000<span data-price-redisenio>—</span></p>
+            <a href="#contacto" class="btn">Mejorar mi web</a>
+          </article>
+        </div>
 
-    <!-- Add-ons opcionales -->
-    <div class="cards" style="margin-top:1rem;">
-      <article class="card">
-  <h3>Soporte mensual</h3>
-  <p>Mantenimiento, pequeños cambios y monitoreo.</p>
-  <ul class="tiny">
-    <li><strong>Lite:</strong> 2 h/mes, updates básicos</li>
-    <li><strong>Pro:</strong> 5 h/mes, mejoras + reportes</li>
-  </ul>
-  <p class="small muted">Desde $50.000<span data-price-soporte>—</span>/mes</p>
-  <a href="#contacto" class="btn">Quiero soporte</a>
-</article>
+        <!-- Add-ons opcionales -->
+        <div class="cards" style="margin-top:1rem;">
+          <article class="card">
+            <h3>Soporte mensual</h3>
+            <p>Mantenimiento, pequeños cambios y monitoreo.</p>
+            <ul class="tiny">
+              <li><strong>Lite:</strong> 2 h/mes, updates básicos</li>
+              <li><strong>Pro:</strong> 5 h/mes, mejoras + reportes</li>
+            </ul>
+            <p class="small muted">Desde $50.000<span data-price-soporte>—</span>/mes</p>
+            <a href="#contacto" class="btn">Quiero soporte</a>
+          </article>
 
+          <article class="card">
+            <h3>Copy & SEO</h3>
+            <p>Textos persuasivos y optimizados para buscadores.</p>
+            <ul class="tiny">
+              <li>Keywords base + meta etiquetas</li>
+              <li>Optimización de performance/imagenes</li>
+            </ul>
+            <p class="small muted">Add-on para cualquier paquete</p>
+          </article>
 
-      <article class="card">
-        <h3>Copy & SEO</h3>
-        <p>Textos persuasivos y optimizados para buscadores.</p>
-        <ul class="tiny">
-          <li>Keywords base + meta etiquetas</li>
-          <li>Optimización de performance/imagenes</li>
-        </ul>
-        <p class="small muted">Add-on para cualquier paquete</p>
-      </article>
+          <article class="card">
+            <h3>Integraciones</h3>
+            <p>Formularios, WhatsApp, Analytics, mapas, newsletter, etc.</p>
+            <ul class="tiny">
+              <li>Google Analytics / Tag Manager</li>
+              <li>Mailing (Brevo/Mailchimp)</li>
+            </ul>
+            <p class="small muted">A medida del proyecto</p>
+          </article>
+        </div>
 
-      <article class="card">
-        <h3>Integraciones</h3>
-        <p>Formularios, WhatsApp, Analytics, mapas, newsletter, etc.</p>
-        <ul class="tiny">
-          <li>Google Analytics / Tag Manager</li>
-          <li>Mailing (Brevo/Mailchimp)</li>
-        </ul>
-        <p class="small muted">A medida del proyecto</p>
-      </article>
-    </div>
-
-<div class="services-cta-bar">
-  <div class="container">
-    <p class="small muted">
-      <strong>Forma de pago:</strong> 50% al iniciar · 50% al entregar.<br>
-      <strong>Entregables estándar:</strong> sitio publicado + acceso a repositorio/hosting + guía rápida de uso.
-    </p>
-    <div class="hero-cta">
-      <a href="#contacto" class="btn">Contame tu proyecto</a>
-      <a href="#portfolio" class="btn ghost">Ver trabajos</a>
-    </div>
-  </div>
-</div>
-
-
-
+        <div class="services-cta-bar">
+          <div class="container">
+            <p class="small muted">
+              <strong>Forma de pago:</strong> 50% al iniciar · 50% al entregar.<br>
+              <strong>Entregables estándar:</strong> sitio publicado + acceso a repositorio/hosting + guía rápida de uso.
+            </p>
+            <div class="hero-cta">
+              <a href="#contacto" class="btn">Hablemos de tu proyecto</a>
+              <a href="#portfolio" class="btn ghost">Ver trabajos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== Portfolio ===== -->
     <section class="portfolio" id="portfolio">
@@ -206,19 +216,19 @@
         <div class="grid-portfolio">
           <!-- Item -->
           <article class="work" data-type="landing">
-            <img src="Multimedia/fresco.png" alt="Proyecto 1 — Landing" loading="lazy">
+            <img src="Multimedia/fresco.png" alt="Fresco Tattoo — Landing" loading="lazy">
             <div class="work-meta">
               <h3>Fresco Tattoo — Landing</h3>
-              <p>Landing fresca y dinámica.</p>
+              <p>Landing moderna y dinámica pensada para captar consultas.</p>
               <a href="https://daianaylen.github.io/fresco.ttt/" class="link" target="_blank" rel="noopener">Ver online</a>
             </div>
           </article>
 
           <article class="work" data-type="sitio">
-            <img src="Multimedia/camino.png" alt="Proyecto 2 — Sitio" loading="lazy">
+            <img src="Multimedia/camino.png" alt="Camino de Estrellas — Sitio web" loading="lazy">
             <div class="work-meta">
-              <h3>Sitio Web Holístico</h3>
-              <p>Página web completa</p>
+              <h3>Camino de Estrellas — Sitio web</h3>
+              <p>Sitio completo para proyecto holístico, con secciones claras y enfoque en reservas.</p>
               <a href="https://daianaylen.github.io/Camino-de-Estrellas/" class="link" target="_blank" rel="noopener">Ver online</a>
             </div>
           </article>
@@ -229,13 +239,13 @@
     <!-- ===== Proceso ===== -->
     <section class="process" id="proceso">
       <div class="container">
-        <h2>Cómo trabajo</h2>
+        <h2>Cómo trabajamos</h2>
         <ol class="steps">
-          <li><strong>Consulta:</strong> charlamos objetivos y necesidades.</li>
-          <li><strong>Propuesta:</strong> presupuesto y alcance claros.</li>
-          <li><strong>Diseño & código:</strong> prototipo, desarrollo y pruebas.</li>
-          <li><strong>Revisión:</strong> ajustes finos y validaciones.</li>
-          <li><strong>Entrega:</strong> publicación + guía + soporte inicial.</li>
+          <li><strong>Consulta:</strong> se relevan objetivos, necesidades y contexto del proyecto.</li>
+          <li><strong>Propuesta:</strong> se presenta presupuesto, alcance y tiempos estimados.</li>
+          <li><strong>Diseño & código:</strong> se desarrolla el prototipo visual y la implementación técnica.</li>
+          <li><strong>Revisión:</strong> se realizan ajustes finos y validaciones sobre la versión casi final.</li>
+          <li><strong>Entrega:</strong> publicación, guía de uso y soporte inicial para el lanzamiento.</li>
         </ol>
       </div>
     </section>
@@ -255,7 +265,7 @@
           </div>
           <div class="pay">
             <span class="pay-ico" aria-hidden="true">💳</span>
-            <strong>Débito</strong>
+            <strong>Tarjeta de débito</strong>
           </div>
           <div class="pay">
             <span class="pay-ico" aria-hidden="true">💵</span>
@@ -271,26 +281,27 @@
       <div class="container grid-2">
         <div>
           <h2>Contacto</h2>
-          <p>Contame de tu proyecto y armamos un plan a medida.</p>
+          <p>Contanos de tu proyecto y armamos una propuesta a medida para tu marca.</p>
           <ul class="contact-list">
             <li><a class="link" href="mailto:a14studio.cba@gmail.com">Gmail</a></li>
-            <li><a class="link" href="https://wa.me/+5493512075110" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a class="link" href="https://wa.me/5493512075110" target="_blank" rel="noopener">WhatsApp</a></li>
             <li><a class="link" href="https://instagram.com/_a14studio_" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
 
-        <form class="contact-form" netlify>
-          <label>Nombre
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-          </label>
-          <label>Email
-            <input type="email" name="email" placeholder="tu@mail.com" required>
-          </label>
-          <label>Mensaje
-            <textarea name="mensaje" rows="4" placeholder="Contame un poco de tu idea" required></textarea>
-          </label>
-          <button class="btn" type="submit">Enviar mensaje</button>
-        </form>
+     <form class="contact-form" id="contact-form">
+  <label>Nombre
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+  </label>
+  <label>Email
+    <input type="email" name="email" placeholder="tu@mail.com" required>
+  </label>
+  <label>Mensaje
+    <textarea name="mensaje" rows="4" placeholder="Contanos un poco de tu idea" required></textarea>
+  </label>
+  <button class="btn" type="submit">Enviar mensaje</button>
+</form>
+
       </div>
     </section>
   </main>
@@ -298,34 +309,38 @@
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2025 A14 Studio — Diseñado y desarrollado por mí</p>
+      <p>© 2025 A14 Studio — Diseño y desarrollo web</p>
       <div class="social">
-  <a href="mailto:a14studio.cba@gmail.com" aria-label="Email">
-    <img src="Multimedia/mail-svg.svg" alt="Email">
-  </a>
-  <a href="https://wa.me/5493510000000" target="_blank" aria-label="WhatsApp">
-    <img src="multimedia/whatsapp-svg.svg" alt="WhatsApp">
-  </a>
-  <a href="https://instagram.com/_a14studio_" target="_blank" aria-label="Instagram">
-    <img src="multimedia/instagram-svg.svg" alt="Instagram">
-  </a>
-</div>
+        <a href="mailto:a14studio.cba@gmail.com" aria-label="Email">
+          <img src="Multimedia/mail-svg.svg" alt="Email">
+        </a>
+        <a href="https://wa.me/5493512075110" target="_blank" aria-label="WhatsApp">
+  <img src="multimedia/whatsapp-svg.svg" alt="WhatsApp">
+</a>
+        <a href="https://instagram.com/_a14studio_" target="_blank" aria-label="Instagram">
+          <img src="multimedia/instagram-svg.svg" alt="Instagram">
+        </a>
+      </div>
     </div>
   </footer>
 
-  <!-- Schema.org básico -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "A14 Studio",
-    "url": "https://tudominio.com",
-    "logo": "https://tudominio.com/img/a14-logo.png",
-    "sameAs": ["https://instagram.com/tuusuario","https://github.com/tuusuario"],
-    "areaServed": "Argentina",
-    "description": "Diseño y desarrollo web: landings, sitios pequeños, rediseños y optimización."
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "A14 Studio",
+  "url": "https://daianaylen.github.io",
+  "logo": "https://daianaylen.github.io/Multimedia/a14definitivo.png",
+  "sameAs": [
+    "https://instagram.com/_a14studio_",
+    "https://github.com/daianaylen"
+  ],
+  "areaServed": "AR",
+  "description": "Estudio de diseño y desarrollo web. Landings, sitios pequeños, rediseños y optimización orientada a resultados."
+}
+</script>
+
+
   <script src="script.js"></script>
 </body>
 </html>
